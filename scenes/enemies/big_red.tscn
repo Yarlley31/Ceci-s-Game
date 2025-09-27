@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://ut7bvrone3jl"]
+
+[ext_resource type="Script" uid="uid://btj6agkl3j5lb" path="res://scripts/big_red.gd" id="1_fwf7x"]
+[ext_resource type="Texture2D" uid="uid://cirecue2po5pc" path="res://assets/Sprite Pack 5/3 - Big Red/Running_(32 x 32).png" id="1_wwnq5"]
+[ext_resource type="Texture2D" uid="uid://bexw2n3t404li" path="res://assets/Sprite Pack 5/3 - Big Red/Hurt_(32 x 32).png" id="3_hjli4"]
+[ext_resource type="PackedScene" uid="uid://s3unhutsb8fg" path="res://prefabs/hitbox.tscn" id="5_hjli4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl2n4"]
+atlas = ExtResource("3_hjli4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0eqy"]
+atlas = ExtResource("1_wwnq5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10epa"]
+atlas = ExtResource("1_wwnq5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft8ns"]
+atlas = ExtResource("1_wwnq5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q0eqy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl2n4")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0eqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10epa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft8ns")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwf7x"]
+size = Vector2(15.0001, 16.9999)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ff4ki"]
+size = Vector2(11, 2.5)
+
+[node name="big_red" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 8
+script = ExtResource("1_fwf7x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -15)
+rotation = 3.14159
+scale = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_q0eqy")
+animation = &"hurt"
+frame_progress = 0.632558
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -7.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_fwf7x")
+
+[node name="touch_detector" type="RayCast2D" parent="."]
+position = Vector2(0, -8)
+target_position = Vector2(-10, 0)
+collision_mask = 9
+
+[node name="Area2D" parent="." node_paths=PackedStringArray("pai") groups=["enemies"] instance=ExtResource("5_hjli4")]
+collision_mask = 34
+pai = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -15)
+shape = SubResource("RectangleShape2D_ff4ki")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

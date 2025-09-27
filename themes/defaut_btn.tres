@@ -1,0 +1,49 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cqxa4xx8t4aoy"]
+
+[ext_resource type="FontFile" uid="uid://jjwyuryfwo6f" path="res://assets/RevMiniPixel.ttf" id="1_5q5rn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmx5l"]
+bg_color = Color(0.0856205, 0.80633, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0534341, 0.609177, 3.85046e-07, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aedtt"]
+bg_color = Color(0.0572771, 0.632734, 1.92523e-07, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0534341, 0.609177, 3.85046e-07, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6xng"]
+bg_color = Color(0.0856205, 0.80633, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0534341, 0.609177, 3.85046e-07, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agckt"]
+bg_color = Color(0.270588, 0.74902, 0.6, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0534341, 0.609177, 3.85046e-07, 1)
+
+[resource]
+Button/colors/font_color = Color(0.93845, 0.93845, 0.93845, 1)
+Button/fonts/font = ExtResource("1_5q5rn")
+Button/styles/focus = SubResource("StyleBoxFlat_lmx5l")
+Button/styles/hover = SubResource("StyleBoxFlat_aedtt")
+Button/styles/normal = SubResource("StyleBoxFlat_u6xng")
+Button/styles/pressed = SubResource("StyleBoxFlat_agckt")
