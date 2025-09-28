@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Ceci Game"
+config/name="Ceci Game Repository"
+run/main_scene="uid://dvijenha8xvn6"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
