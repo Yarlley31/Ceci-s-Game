@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://djm1q67a077s5"]
+
+[ext_resource type="Texture2D" uid="uid://bju3e7s60r7je" path="res://assets/Mini FX, Items & UI/brick-pieces-20251006T165026Z-1-001/brick-pieces/Title GameOver Screen/game_over.png" id="1_wqhvx"]
+[ext_resource type="Theme" uid="uid://cqxa4xx8t4aoy" path="res://themes/defaut_btn.tres" id="2_tbwuq"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GameOver_Title" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 91.0
+offset_right = 414.0
+offset_bottom = 131.0
+texture = ExtResource("1_wqhvx")
+
+[node name="Restart_Btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 160.0
+offset_right = 354.0
+offset_bottom = 178.0
+theme = ExtResource("2_tbwuq")
+text = "Restart"
+
+[node name="Quit_Btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 206.0
+offset_right = 363.0
+offset_bottom = 224.0
+theme = ExtResource("2_tbwuq")
+text = "Quit Game"
