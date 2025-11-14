@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c4wq3dsycr84c"]
+[gd_scene load_steps=31 format=3 uid="uid://c4wq3dsycr84c"]
 
 [ext_resource type="Script" uid="uid://6xmqo8k7pdsr" path="res://scripts/player/Player.gd" id="1_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://dml5saca55lfn" path="res://assets/Sprite Pack 5/2 - Lil Wiz/Casting_Spell_(32 x 32).png" id="2_fjrip"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://wk5c5pat0u54" path="res://scripts/player/WalkState.gd" id="9_jej6c"]
 [ext_resource type="Script" uid="uid://dit18viiacr8y" path="res://scripts/player/JumpState.gd" id="10_f1ej7"]
 [ext_resource type="Script" uid="uid://by88hj0aruohn" path="res://scripts/player/FallState.gd" id="11_oprun"]
+[ext_resource type="Script" uid="uid://cov3xr6kt7p7v" path="res://scripts/player/HurtState.gd" id="12_3v2ag"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
 atlas = ExtResource("2_fjrip")
@@ -202,5 +203,6 @@ script = ExtResource("10_f1ej7")
 script = ExtResource("11_oprun")
 
 [node name="Hurt" type="Node" parent="StateMachine"]
+script = ExtResource("12_3v2ag")
 
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

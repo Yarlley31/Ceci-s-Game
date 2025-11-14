@@ -11,7 +11,6 @@ events = [SubResource("InputEventAction_myx47")]
 
 [node name="pause_menu" type="CanvasLayer"]
 process_mode = 3
-visible = false
 script = ExtResource("1_myx47")
 
 [node name="overlay" type="ColorRect" parent="."]
@@ -38,10 +37,16 @@ theme = ExtResource("1_n87rw")
 shortcut = SubResource("Shortcut_kukqi")
 text = "RESUME"
 
+[node name="select_level_btn" type="Button" parent="menu_container"]
+layout_mode = 2
+theme = ExtResource("1_n87rw")
+text = "SELECT LEVEL"
+
 [node name="quit_btn" type="Button" parent="menu_container"]
 layout_mode = 2
 theme = ExtResource("1_n87rw")
 text = "QUIT GAME"
 
 [connection signal="pressed" from="menu_container/resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_container/select_level_btn" to="." method="_on_quit_btn_pressed"]
 [connection signal="pressed" from="menu_container/quit_btn" to="." method="_on_quit_btn_pressed"]

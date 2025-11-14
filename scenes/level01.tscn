@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://cdmya3i7pejdt"]
+[gd_scene load_steps=45 format=4 uid="uid://cdmya3i7pejdt"]
 
 [ext_resource type="Texture2D" uid="uid://toj7pmg0o5rk" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_gbk3v"]
 [ext_resource type="Script" uid="uid://dt46goh2in3j3" path="res://scenes/level_01.gd" id="2_bxsry"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cxxfexn3fu10p" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="7_rgchm"]
 [ext_resource type="Texture2D" uid="uid://dog835fd2ta2o" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="8_fgmau"]
 [ext_resource type="Texture2D" uid="uid://bh878v4lugbfn" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="9_gkrsa"]
+[ext_resource type="Texture2D" uid="uid://b3egi43lfii3b" path="res://assets/Mini FX, Items & UI/brick-pieces-20251006T165026Z-1-001/brick-pieces/checkpoint.png" id="15_eq2um"]
 [ext_resource type="PackedScene" uid="uid://dqjdtt8ghvutd" path="res://scenes/collectables/coin.tscn" id="15_qa2kw"]
 [ext_resource type="PackedScene" uid="uid://ut7bvrone3jl" path="res://scenes/enemies/big_red.tscn" id="16_ckssg"]
 [ext_resource type="Script" uid="uid://kr42bv03fnwq" path="res://scripts/sign.gd" id="18_kglxn"]
@@ -27,6 +28,7 @@
 [ext_resource type="FontFile" uid="uid://0qf6xhm7hufa" path="res://assets/Mini FX, Items & UI/Common Pick-ups/brick-pieces/RevMiniPixel.ttf" id="24_eq2um"]
 [ext_resource type="Texture2D" uid="uid://cpivvf8ds88sy" path="res://assets/Mini FX, Items & UI/Common Pick-ups/life_spin/heart1_1.png" id="26_tridi"]
 [ext_resource type="PackedScene" uid="uid://dtrip4t4u87tp" path="res://scenes/pause_menu.tscn" id="27_tridi"]
+[ext_resource type="PackedScene" uid="uid://cqorbi4rcrf31" path="res://scenes/checkpoint.tscn" id="29_fo2kf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41r67"]
 texture = ExtResource("1_gbk3v")
@@ -104,7 +106,7 @@ sources/0 = SubResource("TileSetAtlasSource_41r67")
 shader = ExtResource("7_6pfg3")
 shader_parameter/move_speed = 0.02
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xl5rn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tridi"]
 texture = ExtResource("2_l8gd6")
 15:2/0 = 0
 16:2/0 = 0
@@ -133,25 +135,25 @@ texture = ExtResource("2_l8gd6")
 9:1/size_in_atlas = Vector2i(3, 3)
 9:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqa8t"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eq2um"]
 texture = ExtResource("3_ih8w3")
 1:1/size_in_atlas = Vector2i(3, 3)
 1:1/0 = 0
 5:2/size_in_atlas = Vector2i(4, 2)
 5:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nlwq7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fo2kf"]
 texture = ExtResource("4_42awr")
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kglxn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mqvs2"]
 texture = ExtResource("5_qa2kw")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vm8da"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4plfp"]
 texture = ExtResource("6_ckssg")
 1:1/0 = 0
 3:1/0 = 0
@@ -169,7 +171,7 @@ texture = ExtResource("6_ckssg")
 7:4/0 = 0
 9:4/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmhrd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4xxgl"]
 texture = ExtResource("7_bxsry")
 2:0/0 = 0
 3:0/0 = 0
@@ -244,17 +246,28 @@ texture = ExtResource("7_bxsry")
 13:5/0 = 0
 14:5/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u8wfu"]
+texture = ExtResource("15_eq2um")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_6pfg3"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
-sources/0 = SubResource("TileSetAtlasSource_xl5rn")
-sources/1 = SubResource("TileSetAtlasSource_uqa8t")
-sources/2 = SubResource("TileSetAtlasSource_nlwq7")
-sources/3 = SubResource("TileSetAtlasSource_kglxn")
-sources/4 = SubResource("TileSetAtlasSource_vm8da")
-sources/5 = SubResource("TileSetAtlasSource_lmhrd")
+sources/0 = SubResource("TileSetAtlasSource_tridi")
+sources/1 = SubResource("TileSetAtlasSource_eq2um")
+sources/2 = SubResource("TileSetAtlasSource_fo2kf")
+sources/3 = SubResource("TileSetAtlasSource_mqvs2")
+sources/4 = SubResource("TileSetAtlasSource_4plfp")
+sources/5 = SubResource("TileSetAtlasSource_4xxgl")
+sources/8 = SubResource("TileSetAtlasSource_u8wfu")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l8gd6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uquvp"]
 texture = ExtResource("1_gbk3v")
 3:1/0 = 0
 4:1/0 = 0
@@ -307,7 +320,7 @@ texture = ExtResource("1_gbk3v")
 [sub_resource type="TileSet" id="TileSet_ih8w3"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
-sources/0 = SubResource("TileSetAtlasSource_l8gd6")
+sources/0 = SubResource("TileSetAtlasSource_uquvp")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxsry"]
 size = Vector2(34, 20)
@@ -425,7 +438,7 @@ position = Vector2(304, 160)
 position = Vector2(560, 232)
 
 [node name="player" parent="." instance=ExtResource("4_l8gd6")]
-position = Vector2(87, 207)
+position = Vector2(984, 234)
 
 [node name="camera" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -468,6 +481,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sign/area_sign"]
 position = Vector2(-7, 8)
 shape = SubResource("RectangleShape2D_bxsry")
+
+[node name="checkpoint" parent="." instance=ExtResource("29_fo2kf")]
+position = Vector2(949, 245)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -564,3 +580,6 @@ text = "03"
 vertical_alignment = 1
 
 [node name="pause_menu" parent="." instance=ExtResource("27_tridi")]
+
+[connection signal="body_entered" from="checkpoint" to="." method="_on_checkpoint_body_entered"]
+[connection signal="body_entered" from="checkpoint" to="checkpoint" method="_on_body_entered"]

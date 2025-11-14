@@ -20,7 +20,7 @@ var jump_buffer_timer : float = 0.0
 @onready var state_machine = $StateMachine
 
 # Variaveis de Vida
-@export var player_life : int = 10
+@export var player_life : int = 3
 signal player_has_died()
 
 func _ready():
@@ -93,8 +93,8 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 
 
 func take_damage(knock_dir := Vector2.ZERO):
-	Globals.player_life -= 1
-	
+	player_life -= 1
+	Globals.player_life = player_life
 	if player_life <= 0:
 		queue_free()
 		emit_signal("player_has_died")
