@@ -159,7 +159,7 @@ script = ExtResource("1_tuyoq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wqfne")
-animation = &"jump"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
@@ -188,21 +188,21 @@ collision_mask = 8
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("7_d2wvv")
-initial_state = NodePath("Idle")
+initial_state = NodePath("idle")
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="idle" type="Node" parent="StateMachine"]
 script = ExtResource("8_3v2ag")
 
-[node name="Walk" type="Node" parent="StateMachine"]
+[node name="walk" type="Node" parent="StateMachine"]
 script = ExtResource("9_jej6c")
 
-[node name="Jump" type="Node" parent="StateMachine"]
+[node name="jump" type="Node" parent="StateMachine"]
 script = ExtResource("10_f1ej7")
 
-[node name="Fall" type="Node" parent="StateMachine"]
+[node name="fall" type="Node" parent="StateMachine"]
 script = ExtResource("11_oprun")
 
-[node name="Hurt" type="Node" parent="StateMachine"]
+[node name="hurt" type="Node" parent="StateMachine"]
 script = ExtResource("12_3v2ag")
 
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

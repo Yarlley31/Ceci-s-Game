@@ -438,11 +438,12 @@ position = Vector2(304, 160)
 position = Vector2(560, 232)
 
 [node name="player" parent="." instance=ExtResource("4_l8gd6")]
-position = Vector2(984, 234)
+position = Vector2(91, 199)
 
 [node name="camera" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 limit_left = 0
+limit_bottom = 280
 limit_smoothed = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
@@ -580,6 +581,7 @@ text = "03"
 vertical_alignment = 1
 
 [node name="pause_menu" parent="." instance=ExtResource("27_tridi")]
+visible = false
 
 [connection signal="body_entered" from="checkpoint" to="." method="_on_checkpoint_body_entered"]
 [connection signal="body_entered" from="checkpoint" to="checkpoint" method="_on_body_entered"]

@@ -12,7 +12,7 @@ func handle_input(event: InputEvent) -> State:
 	if event.is_action_pressed("jump"):
 		if player.is_on_floor():
 			player.jump()
-			return state_machine.get_node("Jump")
+			return state_machine.get_node("jump")
 		else:
 			player.start_jump_buffer()
 	return null

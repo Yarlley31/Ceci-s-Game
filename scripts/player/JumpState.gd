@@ -21,6 +21,6 @@ func physics_update(delta: float) -> State:
 	
 	if player.is_on_floor():
 		player.stop_jump_buffer()
-		return state_machine.get_node("Idle")
+		return state_machine.get_node("idle")
 	
 	return null

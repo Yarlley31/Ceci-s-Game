@@ -1,6 +1,7 @@
 extends CanvasLayer
 
-@onready var resume_btn: Button = $menu_container/resume_btn
+
+@export var resume_btn: Button 
 
 
 func _ready() -> void:
@@ -11,6 +12,8 @@ func _process(delta: float) -> void:
 	
 
 func _unhandled_input(event: InputEvent) -> void:
+	
+	
 	if event.is_action_pressed("ui_cancel"):
 		visible = true
 		get_tree().paused = true

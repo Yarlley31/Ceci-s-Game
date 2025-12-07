@@ -17,8 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://dqjdtt8ghvutd" path="res://scenes/collectables/coin.tscn" id="14_ngido"]
 [ext_resource type="PackedScene" uid="uid://c4wq3dsycr84c" path="res://scenes/player.tscn" id="15_u3vp0"]
 [ext_resource type="PackedScene" uid="uid://ut7bvrone3jl" path="res://scenes/enemies/big_red.tscn" id="16_6wrd8"]
-[ext_resource type="Script" uid="uid://kr42bv03fnwq" path="res://scripts/sign.gd" id="17_h35ep"]
 [ext_resource type="Texture2D" uid="uid://cjovbp0t7wr4f" path="res://assets/Mini FX, Items & UI/Mini UI/Speech_Emotes (16 x 16).png" id="18_np4j4"]
+[ext_resource type="Script" uid="uid://u8bt4rysopqt" path="res://scripts/signs/sign1_level2.gd" id="18_tymbf"]
 [ext_resource type="Script" uid="uid://dt8fyphp2346r" path="res://scripts/hud_manager.gd" id="19_lu2u1"]
 [ext_resource type="Texture2D" uid="uid://dgfvrh8yg3sch" path="res://assets/Mini FX, Items & UI/Common Pick-ups/brick-pieces/Coin-Sprites/00_Coin-Sprites.png" id="20_hgvgd"]
 [ext_resource type="Texture2D" uid="uid://byt5ar30rr4lk" path="res://assets/Mini FX, Items & UI/Common Pick-ups/brick-pieces/Coin-Sprites/01_Coin-Sprites.png" id="21_d7sgt"]
@@ -433,21 +433,21 @@ position = Vector2(928, 256)
 [node name="big_red4" parent="enemies" instance=ExtResource("16_6wrd8")]
 position = Vector2(600, 256)
 
-[node name="sign" type="Node2D" parent="."]
+[node name="sign2" type="Node2D" parent="."]
 position = Vector2(120, 246)
-script = ExtResource("17_h35ep")
+script = ExtResource("18_tymbf")
 
-[node name="texture" type="Sprite2D" parent="sign"]
+[node name="texture" type="Sprite2D" parent="sign2"]
 position = Vector2(0, -15)
 texture = ExtResource("18_np4j4")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="area_sign" type="Area2D" parent="sign"]
+[node name="area_sign" type="Area2D" parent="sign2"]
 position = Vector2(0, -1)
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sign/area_sign"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sign2/area_sign"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_bxsry")
 

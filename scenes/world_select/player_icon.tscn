@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdeofiunpy8cy"]
+
+[ext_resource type="Texture2D" uid="uid://cmdleva7e4hxt" path="res://assets/ceci_jump.png" id="1_q748q"]
+
+[node name="PlayerIcon" type="TextureRect"]
+offset_right = 59.0
+offset_bottom = 77.0
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("1_q748q")
+expand_mode = 3

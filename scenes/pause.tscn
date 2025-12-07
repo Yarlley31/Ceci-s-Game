@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtrip4t4u87tp"]
+[gd_scene load_steps=5 format=3 uid="uid://f2oex863msgl"]
 
-[ext_resource type="Script" uid="uid://bpkii3t7b7jfw" path="res://scripts/pause_menu.gd" id="1_myx47"]
-[ext_resource type="Theme" uid="uid://bq7pv436bvem6" path="res://themes/button.tres" id="1_n87rw"]
+[ext_resource type="Script" uid="uid://bpkii3t7b7jfw" path="res://scripts/pause_menu.gd" id="1_sd4vo"]
+[ext_resource type="Theme" uid="uid://bq7pv436bvem6" path="res://themes/button.tres" id="2_e8fy2"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_myx47"]
 action = &"ui_cancel"
@@ -9,10 +9,9 @@ action = &"ui_cancel"
 [sub_resource type="Shortcut" id="Shortcut_kukqi"]
 events = [SubResource("InputEventAction_myx47")]
 
-[node name="pause_menu" type="CanvasLayer" node_paths=PackedStringArray("resume_btn")]
+[node name="pause_menu" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_myx47")
-resume_btn = NodePath("menu_container/resume_btn")
+script = ExtResource("1_sd4vo")
 
 [node name="overlay" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -32,22 +31,22 @@ offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="resume_btn" type="Button" parent="menu_container"]
+[node name="next_level_btn" type="Button" parent="menu_container"]
 layout_mode = 2
-theme = ExtResource("1_n87rw")
+theme = ExtResource("2_e8fy2")
 shortcut = SubResource("Shortcut_kukqi")
-text = "RESUME"
+text = "NEXT LEVEL"
 
 [node name="select_level_btn" type="Button" parent="menu_container"]
 layout_mode = 2
-theme = ExtResource("1_n87rw")
+theme = ExtResource("2_e8fy2")
 text = "SELECT LEVEL"
 
 [node name="quit_btn" type="Button" parent="menu_container"]
 layout_mode = 2
-theme = ExtResource("1_n87rw")
+theme = ExtResource("2_e8fy2")
 text = "QUIT GAME"
 
-[connection signal="pressed" from="menu_container/resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_container/next_level_btn" to="." method="_on_resume_btn_pressed"]
 [connection signal="pressed" from="menu_container/select_level_btn" to="." method="_on_quit_btn_pressed"]
 [connection signal="pressed" from="menu_container/quit_btn" to="." method="_on_quit_btn_pressed"]

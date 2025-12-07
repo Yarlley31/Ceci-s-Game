@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://pix7e5pdtxks"]
+
+[ext_resource type="Script" uid="uid://cvwp2bx7if3bk" path="res://scenes/world_select/world_icon.gd" id="1_ady7u"]
+[ext_resource type="PackedScene" uid="uid://cke65kounxx3y" path="res://scenes/level_select/level_select.tscn" id="2_a34ei"]
+
+[sub_resource type="Gradient" id="Gradient_02ucn"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ady7u"]
+gradient = SubResource("Gradient_02ucn")
+
+[node name="worldIcon" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("1_ady7u")
+level_select_packed = ExtResource("2_a34ei")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = -23.0
+offset_right = 64.0
+text = "World 1"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("GradientTexture2D_ady7u")
