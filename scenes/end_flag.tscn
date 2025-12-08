@@ -104,6 +104,7 @@ animation = &"activation"
 
 [node name="level_complete_menu" type="CanvasLayer" parent="."]
 process_mode = 2
+visible = false
 
 [node name="overlay" type="ColorRect" parent="level_complete_menu"]
 anchors_preset = 15

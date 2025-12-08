@@ -39,8 +39,14 @@ func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		if current_level.next_scene_path:
 			print(current_level.next_scene_path)
-			get_tree().change_scene_to_file(current_level.next_scene_path)
+			Fading.player_anim("fading_in")
+			if !Fading.is_connected("transtion_finished", change_level):
+				Fading.connect("transition_finished", change_level)
+				
 			
+func change_level(_anim_name: String):
+	get_tree().change_scene_to_file(current_level.next_scene_path)
+
 func tween_icon():
 	move_tween = get_tree().create_tween()
 	move_tween.tween_property($PlayerIcon, "global_position", current_level.global_position, 0.5).set_trans(Tween.TRANS_SINE)

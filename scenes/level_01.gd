@@ -9,6 +9,7 @@ func _ready() -> void:
 	Globals.coins = 0
 	Globals.score = 0
 	Globals.player_life = 3
+	Fading.player_anim("fading_out")
 	
 func reload_game():
 	await get_tree().create_timer(1.0).timeout

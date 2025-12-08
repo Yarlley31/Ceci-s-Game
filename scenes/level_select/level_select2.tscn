@@ -17,6 +17,7 @@ offset_left = 97.0
 offset_top = 492.0
 offset_right = 161.0
 offset_bottom = 556.0
+next_scene_path = "uid://br6oku7sa6scr"
 next_level_right = NodePath("../2")
 
 [node name="2" parent="." node_paths=PackedStringArray("next_level_up", "next_level_left") instance=ExtResource("2_hbofh")]
