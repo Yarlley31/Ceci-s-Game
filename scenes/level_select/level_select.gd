@@ -32,7 +32,12 @@ func _input(event):
 		get_tree().get_root().add_child(parent_world_select)
 		get_tree().current_scene = parent_world_select
 		get_tree().get_root().remove_child(self)
-		
+	
+	if event.is_action_pressed("ui_accept"):
+		if current_level.next_scene_path:
+			print(current_level.next_scene_path)
+			get_tree().change_scene_to_file(current_level.next_scene_path)
+			
 func tween_icon():
 	move_tween = get_tree().create_tween()
 	move_tween.tween_property($PlayerIcon, "global_position", current_level.global_position, 0.5).set_trans(Tween.TRANS_SINE)

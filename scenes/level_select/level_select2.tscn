@@ -12,64 +12,80 @@ offset_bottom = 320.0
 script = ExtResource("1_60pgo")
 
 [node name="1" parent="." node_paths=PackedStringArray("next_level_right") instance=ExtResource("2_hbofh")]
-offset_left = 24.0
-offset_top = 189.0
-offset_right = 88.0
-offset_bottom = 253.0
+layout_mode = 0
+offset_left = 97.0
+offset_top = 492.0
+offset_right = 161.0
+offset_bottom = 556.0
 next_level_right = NodePath("../2")
 
 [node name="2" parent="." node_paths=PackedStringArray("next_level_up", "next_level_left") instance=ExtResource("2_hbofh")]
-offset_left = 137.0
-offset_top = 185.0
-offset_right = 201.0
-offset_bottom = 249.0
+layout_mode = 0
+offset_left = 334.0
+offset_top = 481.0
+offset_right = 398.0
+offset_bottom = 545.0
 level_name = "2"
 next_level_up = NodePath("../3")
 next_level_left = NodePath("../1")
 
 [node name="3" parent="." node_paths=PackedStringArray("next_level_down", "next_level_right") instance=ExtResource("2_hbofh")]
-offset_left = 138.0
-offset_top = 37.0
-offset_right = 202.0
-offset_bottom = 101.0
+layout_mode = 0
+offset_left = 352.0
+offset_top = 167.0
+offset_right = 416.0
+offset_bottom = 231.0
 level_name = "3"
 next_level_down = NodePath("../2")
 next_level_right = NodePath("../4")
 
 [node name="4" parent="." node_paths=PackedStringArray("next_level_left", "next_level_right") instance=ExtResource("2_hbofh")]
-offset_left = 270.0
-offset_top = 39.0
-offset_right = 334.0
-offset_bottom = 103.0
+layout_mode = 0
+offset_left = 685.0
+offset_top = 169.0
+offset_right = 749.0
+offset_bottom = 233.0
 level_name = "4"
 next_level_left = NodePath("../3")
 next_level_right = NodePath("../5")
 
 [node name="5" parent="." node_paths=PackedStringArray("next_level_down", "next_level_left") instance=ExtResource("2_hbofh")]
-offset_left = 275.0
-offset_top = 180.0
-offset_right = 339.0
-offset_bottom = 244.0
+layout_mode = 0
+offset_left = 689.0
+offset_top = 433.0
+offset_right = 753.0
+offset_bottom = 497.0
 level_name = "5"
 next_level_down = NodePath("../6")
 next_level_left = NodePath("../4")
 
 [node name="6" parent="." node_paths=PackedStringArray("next_level_up", "next_level_right") instance=ExtResource("2_hbofh")]
-offset_left = 397.0
-offset_top = 191.0
-offset_right = 461.0
-offset_bottom = 255.0
+layout_mode = 0
+offset_left = 951.0
+offset_top = 488.0
+offset_right = 1015.0
+offset_bottom = 552.0
 level_name = "6"
 next_level_up = NodePath("../5")
 next_level_right = NodePath("../7")
 
 [node name="7" parent="." node_paths=PackedStringArray("next_level_left") instance=ExtResource("2_hbofh")]
-offset_left = 501.0
-offset_top = 120.0
-offset_right = 565.0
-offset_bottom = 184.0
+layout_mode = 0
+offset_left = 1046.0
+offset_top = 284.0
+offset_right = 1110.0
+offset_bottom = 348.0
 level_name = "7"
 next_level_left = NodePath("../6")
 
 [node name="PlayerIcon" parent="." instance=ExtResource("3_ww0ld")]
 layout_mode = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 43.0
+offset_right = 663.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 36
+text = "World 2"
