@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://b3egi43lfii3b" path="res://assets/Mini FX, Items & UI/brick-pieces-20251006T165026Z-1-001/brick-pieces/checkpoint.png" id="15_eq2um"]
 [ext_resource type="PackedScene" uid="uid://dqjdtt8ghvutd" path="res://scenes/collectables/coin.tscn" id="15_qa2kw"]
 [ext_resource type="PackedScene" uid="uid://ut7bvrone3jl" path="res://scenes/enemies/big_red.tscn" id="16_ckssg"]
-[ext_resource type="Script" uid="uid://kr42bv03fnwq" path="res://scripts/sign.gd" id="18_kglxn"]
+[ext_resource type="Script" uid="uid://byjqodg3qsbho" path="res://scripts/sign.gd" id="18_kglxn"]
 [ext_resource type="Texture2D" uid="uid://cjovbp0t7wr4f" path="res://assets/Mini FX, Items & UI/Mini UI/Speech_Emotes (16 x 16).png" id="18_nlwq7"]
 [ext_resource type="Script" uid="uid://dt8fyphp2346r" path="res://scripts/hud_manager.gd" id="20_bx7o6"]
 [ext_resource type="Texture2D" uid="uid://dgfvrh8yg3sch" path="res://assets/Mini FX, Items & UI/Common Pick-ups/brick-pieces/Coin-Sprites/00_Coin-Sprites.png" id="20_oa88y"]
@@ -28,7 +28,7 @@
 [ext_resource type="FontFile" uid="uid://0qf6xhm7hufa" path="res://assets/Mini FX, Items & UI/Common Pick-ups/brick-pieces/RevMiniPixel.ttf" id="24_eq2um"]
 [ext_resource type="Texture2D" uid="uid://cpivvf8ds88sy" path="res://assets/Mini FX, Items & UI/Common Pick-ups/life_spin/heart1_1.png" id="26_tridi"]
 [ext_resource type="PackedScene" uid="uid://dtrip4t4u87tp" path="res://scenes/pause_menu.tscn" id="27_tridi"]
-[ext_resource type="PackedScene" uid="uid://cqorbi4rcrf31" path="res://scenes/checkpoint.tscn" id="29_fo2kf"]
+[ext_resource type="PackedScene" uid="uid://cqorbi4rcrf31" path="res://scenes/end_flag.tscn" id="29_fo2kf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41r67"]
 texture = ExtResource("1_gbk3v")
@@ -348,7 +348,8 @@ position = Vector2(0, -34)
 motion_mirroring = Vector2(432, 200)
 
 [node name="sky" type="Sprite2D" parent="BG/5"]
-scale = Vector2(1.5, 1.5)
+position = Vector2(0, -115.00001)
+scale = Vector2(2.0729165, 2.0528848)
 texture = ExtResource("5_uqa8t")
 centered = false
 
@@ -358,7 +359,8 @@ motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(432, 0)
 
 [node name="backgound clouds" type="Sprite2D" parent="BG/4"]
-scale = Vector2(1.5, 1.5)
+position = Vector2(0, -134)
+scale = Vector2(2.25, 2.1442306)
 texture = ExtResource("6_6pfg3")
 centered = false
 
@@ -370,7 +372,8 @@ motion_mirroring = Vector2(432, 0)
 [node name="clouds" type="Sprite2D" parent="BG/3"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_rgchm")
-scale = Vector2(1.5, 1.5)
+position = Vector2(0, -78)
+scale = Vector2(1.4999999, 1.8749998)
 texture = ExtResource("7_rgchm")
 centered = false
 
@@ -380,7 +383,8 @@ motion_scale = Vector2(0.7, 1)
 motion_mirroring = Vector2(432, 0)
 
 [node name="hills" type="Sprite2D" parent="BG/2"]
-scale = Vector2(1.5, 1.5)
+position = Vector2(0, -57.999992)
+scale = Vector2(2.267361, 1.778846)
 texture = ExtResource("8_fgmau")
 centered = false
 
@@ -390,7 +394,8 @@ motion_scale = Vector2(0.8, 1)
 motion_mirroring = Vector2(432, 0)
 
 [node name="florest" type="Sprite2D" parent="BG/1"]
-scale = Vector2(1.5, 1.5)
+position = Vector2(0, -74)
+scale = Vector2(2.222222, 1.855769)
 texture = ExtResource("9_gkrsa")
 centered = false
 
@@ -482,9 +487,6 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sign/area_sign"]
 position = Vector2(-7, 8)
 shape = SubResource("RectangleShape2D_bxsry")
-
-[node name="checkpoint" parent="." instance=ExtResource("29_fo2kf")]
-position = Vector2(949, 245)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -583,5 +585,5 @@ vertical_alignment = 1
 [node name="pause_menu" parent="." instance=ExtResource("27_tridi")]
 visible = false
 
-[connection signal="body_entered" from="checkpoint" to="." method="_on_checkpoint_body_entered"]
-[connection signal="body_entered" from="checkpoint" to="checkpoint" method="_on_body_entered"]
+[node name="end_flag" parent="." instance=ExtResource("29_fo2kf")]
+position = Vector2(957, 244)

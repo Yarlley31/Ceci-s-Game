@@ -29,9 +29,12 @@ func _input(event):
 		tween_icon()
 	
 	if event.is_action_pressed("ui_cancel"):
-		get_tree().get_root().add_child(parent_world_select)
-		get_tree().current_scene = parent_world_select
-		get_tree().get_root().remove_child(self)
+		if parent_world_select:
+			get_tree().get_root().add_child(parent_world_select)
+			get_tree().current_scene = parent_world_select
+			get_tree().get_root().remove_child(self)
+		else:
+			get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	
 	if event.is_action_pressed("ui_accept"):
 		if current_level.next_scene_path:

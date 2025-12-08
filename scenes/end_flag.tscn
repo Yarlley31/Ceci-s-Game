@@ -1,7 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cqorbi4rcrf31"]
+[gd_scene load_steps=18 format=3 uid="uid://cqorbi4rcrf31"]
 
-[ext_resource type="Script" uid="uid://dwcrrgvmehs5j" path="res://scripts/checkpoint.gd" id="1_ywqth"]
+[ext_resource type="Script" uid="uid://cpgm6uvwhe4p4" path="res://scenes/end_flag.gd" id="1_8s2b2"]
 [ext_resource type="Texture2D" uid="uid://b3egi43lfii3b" path="res://assets/Mini FX, Items & UI/brick-pieces-20251006T165026Z-1-001/brick-pieces/checkpoint.png" id="1_yyywg"]
+[ext_resource type="Theme" uid="uid://bq7pv436bvem6" path="res://themes/button.tres" id="3_jk1va"]
+[ext_resource type="FontFile" uid="uid://jjwyuryfwo6f" path="res://assets/RevMiniPixel.ttf" id="3_l8w0g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywqth"]
 
@@ -81,10 +83,17 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="checkpoint" type="Area2D"]
+[sub_resource type="InputEventAction" id="InputEventAction_myx47"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_kukqi"]
+events = [SubResource("InputEventAction_myx47")]
+
+[node name="end_flag" type="Area2D"]
 collision_layer = 64
 collision_mask = 2
-script = ExtResource("1_ywqth")
+script = ExtResource("1_8s2b2")
+next_level_path = "uid://br6oku7sa6scr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ywqth")
@@ -92,3 +101,56 @@ shape = SubResource("RectangleShape2D_ywqth")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_j0vas")
 animation = &"activation"
+
+[node name="level_complete_menu" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="overlay" type="ColorRect" parent="level_complete_menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.282353)
+
+[node name="Label" type="Label" parent="level_complete_menu"]
+visible = false
+offset_left = -2.0
+offset_top = 226.0
+offset_right = 1278.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("3_l8w0g")
+theme_override_font_sizes/font_size = 36
+text = "VOCE VENCEU"
+horizontal_alignment = 1
+
+[node name="menu_container" type="VBoxContainer" parent="level_complete_menu"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -33.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="next_level_btn" type="Button" parent="level_complete_menu/menu_container"]
+layout_mode = 2
+theme = ExtResource("3_jk1va")
+shortcut = SubResource("Shortcut_kukqi")
+text = "NEXT LEVEL"
+
+[node name="level_select_btn" type="Button" parent="level_complete_menu/menu_container"]
+layout_mode = 2
+theme = ExtResource("3_jk1va")
+text = "SELECT LEVEL"
+
+[node name="quit_btn" type="Button" parent="level_complete_menu/menu_container"]
+layout_mode = 2
+theme = ExtResource("3_jk1va")
+text = "QUIT GAME"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="pressed" from="level_complete_menu/menu_container/next_level_btn" to="." method="_on_next_level_btn_pressed"]
+[connection signal="pressed" from="level_complete_menu/menu_container/level_select_btn" to="." method="_on_level_select_btn_pressed"]
+[connection signal="pressed" from="level_complete_menu/menu_container/quit_btn" to="." method="_on_quit_btn_pressed"]

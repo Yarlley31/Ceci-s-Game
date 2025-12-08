@@ -7,8 +7,8 @@
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 320.0
+offset_right = 1283.0
+offset_bottom = 720.0
 script = ExtResource("1_60pgo")
 
 [node name="1" parent="." node_paths=PackedStringArray("next_level_right") instance=ExtResource("2_hbofh")]

@@ -7,8 +7,8 @@
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 320.0
+offset_right = 1281.0
+offset_bottom = 721.0
 script = ExtResource("1_qtcrs")
 
 [node name="1" parent="." node_paths=PackedStringArray("next_level_right") instance=ExtResource("1_83qsp")]
@@ -27,6 +27,7 @@ offset_top = 436.0
 offset_right = 326.0
 offset_bottom = 500.0
 level_name = "2"
+next_scene_path = "uid://br6oku7sa6scr"
 next_level_up = NodePath("../3")
 next_level_left = NodePath("../1")
 

@@ -49,5 +49,5 @@ theme = ExtResource("1_n87rw")
 text = "QUIT GAME"
 
 [connection signal="pressed" from="menu_container/resume_btn" to="." method="_on_resume_btn_pressed"]
-[connection signal="pressed" from="menu_container/select_level_btn" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="menu_container/select_level_btn" to="." method="_on_select_level_btn_pressed"]
 [connection signal="pressed" from="menu_container/quit_btn" to="." method="_on_quit_btn_pressed"]
