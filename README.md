@@ -21,7 +21,6 @@ Ceci's Game transporta o jogador para um planeta alienígena futurista que enfre
 | Menu Principal | Gameplay |
 |:---:|:---:|
 | ![Menu](prints/main_menu.png) | ![Gameplay](prints/gameplay2.png) |
-*(Coloque os links dos seus prints aqui)*
 
 ---
 
