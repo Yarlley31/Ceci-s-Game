@@ -43,7 +43,17 @@ Ceci's Game transporta o jogador para um planeta alienígena futurista que enfre
 ## 🛠 Tecnologias
 * **Engine:** Godot 4
 * **Linguagem:** GDScript
-* **Design/Assets:** (Se você usou assets prontos ou fez, cite aqui. Ex: Kenney Assets, Itch.io ou "Arte Original")
+
+
+* ## 🎨 Créditos e Assets
+
+Este jogo foi possível graças ao trabalho incrível da comunidade Open Source.
+Abaixo, a lista de assets de terceiros utilizados:
+
+### 🖼️ Arte & Sprites
+* **Seasonal Tilesets** por **GrafxKid** (itch.io)
+    * *Licença:* Creative Commons Zero v1.0 Universal
+* **Ceci sprite** por **Yarlley F.** 
 
 ---
 
