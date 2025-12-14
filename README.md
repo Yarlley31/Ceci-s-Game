@@ -2,7 +2,7 @@
 
 > *Projeto desenvolvido para a Liga de Jogos da UEFS (IEEE).*
 
-![Banner do Jogo](https://via.placeholder.com/1000x300?text=Ceci%27s+Game+-+Banner+Aqui)
+![Banner do Jogo](prints/title_screen.png)
 *(Substitua este link acima por uma imagem de capa do seu jogo)*
 
 ## 📖 Sobre o Jogo
@@ -20,7 +20,7 @@ Ceci's Game transporta o jogador para um planeta alienígena futurista que enfre
 ## 📸 Galeria
 | Menu Principal | Gameplay |
 |:---:|:---:|
-| ![Menu](https://via.placeholder.com/400x200?text=Screenshot+Menu) | ![Gameplay](https://via.placeholder.com/400x200?text=Screenshot+Gameplay) |
+| ![Menu](prints/main_menu.png) | ![Gameplay](prints/gameplay2.png) |
 *(Coloque os links dos seus prints aqui)*
 
 ---
