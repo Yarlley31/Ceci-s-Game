@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvijenha8xvn6"]
+[gd_scene load_steps=6 format=3 uid="uid://dvijenha8xvn6"]
 
 [ext_resource type="Script" uid="uid://b123yngp7wudg" path="res://scripts/title_screen.gd" id="1_aedtt"]
 [ext_resource type="Texture2D" uid="uid://qg3rsxj2aole" path="res://assets/Mini FX, Items & UI/Mini UI/Title GameOver Screen/title-screen.jpg" id="1_lmx5l"]
 [ext_resource type="Theme" uid="uid://cqxa4xx8t4aoy" path="res://themes/defaut_btn.tres" id="2_lmx5l"]
+[ext_resource type="FontFile" uid="uid://cmnen2u6sc456" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_u6xng"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aedtt"]
 
@@ -75,6 +76,21 @@ text = "QUIT GAME"
 
 [node name="ceci" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 152.0
+offset_right = 766.0
+offset_bottom = 196.0
+theme_override_colors/font_shadow_color = Color(0.28118682, 0.28118688, 0.28118682, 0)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("4_u6xng")
+theme_override_font_sizes/font_size = 36
+text = "CECI GAME"
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/select_level_btn" to="." method="_on_select_level_btn_pressed"]
